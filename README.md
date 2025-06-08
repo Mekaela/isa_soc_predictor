@@ -12,9 +12,9 @@ The dataset covers 42 countries, excluding Portugal, so the predictions may be l
 
 ## Dataset
 The SoilHealthDB created by Jian et. al (2020), which provides data collated from studies across 354 sites across 42 countries.
-This dataset includes several different types of soil organic carbon measurements.
+This dataset includes several different types of soil organic carbon measurements. https://github.com/jinshijian/SoilHealthDB/tree/master/data
 
-The other option, that will be used if it is more suitable, is using a pre-trained model, such as DL-SOC. 
+The other option, that will be used if it is more suitable, is using a pre-trained model, such as DL-SOC: https://github.com/PEESEgroup/DL-SOC
 
 ## Method or Algorithm
 Several methods will be tried and the most accurate will be used with user input with the interface. The methods tried will be random forest, linear regression, and potentially deep learning. 
