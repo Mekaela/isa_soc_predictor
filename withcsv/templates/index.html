@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV Prediction App</title>
+    <!-- <link rel="stylesheet" href=""> -->
+</head>
+<!-- The variables needed are 'Tannual', 'Pannual', 'Tillage', 'CoverCropGroup', 'GrainCropGroup'> -->
+<body>
+  <p>Enter the values for Feature 1 and Feature 2 to get a prediction.</p>
+
+  <form action="/predict" method="POST">
+    <label for="Tannual">Average annual Temperature (C):</label>
+    <input type="text" id="Tannual" name="Tannual" required><br><br>
+
+    <label for="Pannual">Average annual Precipitation (mm):</label>
+    <input type="text" id="Pannual" name="Pannual" required><br><br>
+
+    <label for="Tillage">Do you till your fields?:</label>
+    <input type="radio" id="Tillage" name="Tillage">
+    <label for="yes">Yes</label><br>
+    <input type="radio" id="feature3" name="feature3">
+    <label for="no">No</label><br>
+
+    <label for="CoverCropGroup">Do you use a cover crop?:</label>
+    <input type="radio" id="CoverCropGroup" name="CoverCropGroup">
+    <label for="yes">Yes</label><br>
+    <input type="radio" id="CoverCropGroup" name="CoverCropGroup">
+    <label for="no">No</label><br>
+    <!-- add in conditional, If so, which one (choose one you use most) -->
+
+
+    <label for="GrainCropGroup">Which crop group do you plant (choose one you plant the most)?:</label>
+    <select id="GrainCropGroup" name="GrainCropGroup" required>
+      <option value="Grain">Monoculture</option>
+      <option value="Vegetable">Vegetable</option>
+      <option value="Fruit">Monoculture-rotation</option>
+    </select>
+
+    <br><br>
+    <input type="submit" value="Predict">
+  </form>
+
+  </body>
