@@ -8,38 +8,47 @@
 </head>
 <!-- The variables needed are 'Tannual', 'Pannual', 'Tillage', 'CoverCropGroup', 'GrainCropGroup'> -->
 <body>
-  <p>Enter the values for Feature 1 and Feature 2 to get a prediction.</p>
+  <p>Get an estimate of your property's soil carbon.</p>
 
   <form action="/predict" method="POST">
     <label for="Tannual">Average annual Temperature (C):</label>
-    <input type="text" id="Tannual" name="Tannual" required><br><br>
+    <input type="text" id="Tannual" name="Tannual" value="{{ Tannual }}" required><br><br>
 
     <label for="Pannual">Average annual Precipitation (mm):</label>
-    <input type="text" id="Pannual" name="Pannual" required><br><br>
+    <input type="text" id="Pannual" name="Pannual" value="{{ Pannual }}" required><br><br>
 
     <label for="Tillage">Do you till your fields?:</label>
-    <input type="radio" id="Tillage" name="Tillage">
-    <label for="yes">Yes</label><br>
-    <input type="radio" id="feature3" name="feature3">
-    <label for="no">No</label><br>
+    <select id="Tillage" name="Tillage" required>
+        <option value="None">No</option>
+        <option value="Reduced">Yes, reduced level</option>
+        <option value="Conventional">Yes, conventional level</option>
+        <option value="Unknown">Yes, other</option>
+    </select>
 
     <label for="CoverCropGroup">Do you use a cover crop?:</label>
-    <input type="radio" id="CoverCropGroup" name="CoverCropGroup">
-    <label for="yes">Yes</label><br>
-    <input type="radio" id="CoverCropGroup" name="CoverCropGroup">
-    <label for="no">No</label><br>
-    <!-- add in conditional, If so, which one (choose one you use most) -->
+    <select id="CoverCropGroup" name="CoverCropGroup" required>
+        <option value="None">No</option>
+        <option value="Legume">Yes, Legume</option>
+        <option value="Rye">Yes, Rye</option>
+        <option value="Grass">Yes, Grass</option>
+        <option value="Brassica">Yes, Brassica</option>
+        <option value="Mixed">Yes, Mixed</option>
+        <option value="Unknown">Yes, Other</option>
+    </select>
 
 
-    <label for="GrainCropGroup">Which crop group do you plant (choose one you plant the most)?:</label>
+    <label for="GrainCropGroup">Which crop group do you plant (choose the one you plant the most)?:</label>
     <select id="GrainCropGroup" name="GrainCropGroup" required>
       <option value="Grain">Monoculture</option>
       <option value="Vegetable">Vegetable</option>
       <option value="Fruit">Monoculture-rotation</option>
+      <option value="Unknown">Other</option>
     </select>
 
     <br><br>
     <input type="submit" value="Predict">
   </form>
+
+ 
 
   </body>

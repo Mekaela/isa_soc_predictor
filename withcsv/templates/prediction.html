@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV Prediction</title>
+    <!-- <link rel="stylesheet" href=""> -->
+</head>
+<body>
+ {% if prediction %}
+    <h2>Your soil carbon estimate is:</h2>
+    <p>{{ "%.3f"|format(prediction) }}</p>
+  {% endif %}
+  
+  {% if error %}
+    <h2>Sorry, there was an error:</h2>
+    <p>{{ error }}</p>
+  {% endif %}
+</body>
