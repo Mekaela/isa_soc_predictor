@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/prediction.css') }}">
+</head>
+<body>
+  <div class="body">
+    <div class="prediction-container">
+      {% if prediction %}
+        <h2>Your soil carbon estimate is:</h2>
+        <p class="prediction-result"> {{ "%.3f"|format(prediction) }}</p>
+      {% endif %}
+    
+
+      {% if error %}
+        <h2>Sorry, there was an error:</h2>
+        <p>{{ error }}</p>
+      {% endif %}
+    </div>
+      <p class="disclaimer">Note: this is a prediction only. Soil testing of your property is required to get a true result of soil carbon. </p>
+      <p class="disclaimer"> The accuracy of the model used to predict this is: </p>
+    </div>
+</body>

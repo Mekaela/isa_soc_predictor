@@ -1,0 +1,33 @@
+:root {
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    /* padding: 20px; */
+    box-sizing: border-box;
+}
+
+.prediction-container {
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.prediction-result {
+    font-size: 40px;
+}
+
+.disclaimer {
+    text-align: center;
+    max-width: 400px;
+    font-size: smaller;
+}

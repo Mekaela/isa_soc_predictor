@@ -1,28 +1,22 @@
 from flask import Flask, request, render_template
 import pickle
-import numpy as np
 import pandas as pd
 
 app = Flask(__name__)
 
-# Load your trained model
-with open('./withcsv/soc_classifier_model.pkl', 'rb') as model_file:
+# Load trained model
+with open('./soc_classifier_model.pkl', 'rb') as model_file:
     model = pickle.load(model_file)
 
+#display html page
 @app.route('/')
 def home():
     return render_template('index.html')
 
+# get input and make the prediction on another html page
 @app.route('/predict', methods=['GET','POST'])
 def predict():
     prediction = None
-    # user_input = {
-    #     'tannual': '',
-    #     'pannual': '',
-    #     'tillage': 'None',  # Default value
-    #     'cover_crop': 'None',  # Default value
-    #     'grain_crop': 'Monoculture'  # Default value
-    # }
     if request.method == 'POST':
         # Get user input from the form
         Tannual = float(request.form['Tannual'])
@@ -31,6 +25,7 @@ def predict():
         CoverCropGroup = str(request.form['CoverCropGroup'])
         GrainCropGroup = str(request.form['GrainCropGroup'])
 
+        # Create a DataFrame for the input
         user_input = pd.DataFrame({
             'Tannual': [Tannual],
             'Pannual': [Pannual],
