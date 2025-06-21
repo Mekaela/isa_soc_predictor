@@ -7,6 +7,10 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.linear_model import Ridge, LinearRegression
 import pickle
 
+# This script creates a trained model file, and should be used on a csv with the following columns:
+# Tannual, Pannual, Tillage, CoverCropGroup, GrainCropGroup, OC
+# if the dataset is not cleaned, the model will need an imputer added to the pipeline.
+
 def get_data():
     """
     Load the dataset from a CSV file.
