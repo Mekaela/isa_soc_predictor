@@ -1,5 +1,9 @@
 # isa_soc_predictor
 
+## Use
+To run this predictor on your computer, clone this repository and run main.py. Open the local environment Flask provides, input the fields and get an estimate. 
+To train it on your own data, use regression_model.py with your data (make sure it has the required fields). Note there is no imputer, so add it to the pipeline if your data needs it. After running this file, it will replace soc_classifier_model.pkl and you can run main.py with your data. 
+
 ## Project category
 Tabular data, with user input
 
